@@ -64,11 +64,12 @@ let timer = [
     }
 ];
 
-// renderLocastorage()
+renderLocastorage()
 
 for (let i = 0; i < timer.length; i++) {
     timer[i].time;
     cssItems = timer[i].cssItem;
+    console.log(cssItems)
     if (militaryTime === timer[i].time) {  
         $(cssItems).css("background-color", "red");
     }
@@ -81,44 +82,32 @@ for (let i = 0; i < timer.length; i++) {
 }
 
 
-function storageItemsFun() {
-    let storageItems = [];
-    for (let i = 0; i < timer.length; i++) {
-        storageItems.push(timer[i].storage);
-    }
-    return storageItems;
-}
-let storageItemsstuff = JSON.stringify(storageItemsFun());
-console.log(storageItemsstuff);
+// function storageItemsFun() {
+//     for (let i = 0; i < timer.length; i++) {
+//         let storageItems = timer[i].storage;
+//         console.log(storageItems);
+//     }
+// }
+// let storageItemsstuff = storageItemsFun();
+// console.log(storageItemsstuff);
 
-function btnItemsFun() {
-    let btnItems = [];
-    for (let i = 0; i < timer.length; i++) {
-        btnItems.push(timer[i].btnItem);
-    }
-    return btnItems;
-}
-let btnItemsstuff = JSON.stringify(btnItemsFun());
-console.log(btnItemsstuff);
+// function btnItemsFun() {
+//     let btnItems = [];
+//     for (let i = 0; i < timer.length; i++) {
+//         btnItems.push(timer[i].btnItem);
+//     }
+//     return btnItems;
+// }
+// let btnItemsstuff = JSON.stringify(btnItemsFun());
+// console.log(btnItemsstuff); 
 
-
-function cssItemsFun() {
-    let cssItems = [];
-    for (let i = 0; i < timer.length; i++) {
-        cssItems.push(timer[i].cssItem);
-        return cssItems[i];
-    }
-}
-let cssItemsstuff = JSON.stringify(cssItemsFun());
-console.log(cssItemsstuff);
- 
-
-function renderLocastorage(savedT1) {
+function renderLocastorage() {
     var savedT1 = JSON.parse(localStorage.getItem("t-1Text"));
-    $(cssItemsFun()).val(savedT1);
+    console.log(savedT1);
+    $('#t-1').val(savedT1);
 }
 
-$('#t-1').on("click", function () {
+$('#t-1, #t-2, #t-3, #t-4, #t-5, #t-6, #t-7, #t-8, #t-9').on("click", function () {
     t1 = $(cssItemsstuff).val();
     localStorage.setItem("t-1Text", JSON.stringify(t1));
     if (t1 === JSON.parse(localStorage.getItem("t-1Text"))) {
