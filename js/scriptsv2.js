@@ -6,6 +6,24 @@ let storageItems;
 let cssItems;
 let btnItems;
 
+var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17]
+
+for (let i = 0; i < hours.length; i++){
+    var newRow = document.createElement("div")
+    newRow.dataset.hour = hours[i];
+    newRow.classList.add("agenda")
+   //append it to the body 
+}
+
+$(".agenda").on("click", (e) => {
+    var hour = e.target.dataset.hour
+    var value = e.target.value
+   localStorage.setItem(hour, value)
+})
+
+//$(document).on("click", ".agenda", ()=>{}
+
+
 var militaryTime = moment().format("H");
 let timer = [
     {
@@ -82,24 +100,24 @@ for (let i = 0; i < timer.length; i++) {
 }
 
 
-// function storageItemsFun() {
-//     for (let i = 0; i < timer.length; i++) {
-//         let storageItems = timer[i].storage;
-//         console.log(storageItems);
-//     }
-// }
-// let storageItemsstuff = storageItemsFun();
-// console.log(storageItemsstuff);
+function storageItemsFun() {
+    for (let i = 0; i < timer.length; i++) {
+        let storageItems = timer[i].storage;
+        console.log(storageItems);
+    }
+}
+let storageItemsstuff = storageItemsFun();
+console.log(storageItemsstuff);
 
-// function btnItemsFun() {
-//     let btnItems = [];
-//     for (let i = 0; i < timer.length; i++) {
-//         btnItems.push(timer[i].btnItem);
-//     }
-//     return btnItems;
-// }
-// let btnItemsstuff = JSON.stringify(btnItemsFun());
-// console.log(btnItemsstuff); 
+function btnItemsFun() {
+    let btnItems = [];
+    for (let i = 0; i < timer.length; i++) {
+        btnItems.push(timer[i].btnItem);
+    }
+    return btnItems;
+}
+let btnItemsstuff = JSON.stringify(btnItemsFun());
+console.log(btnItemsstuff); 
 
 function renderLocastorage() {
     var savedT1 = JSON.parse(localStorage.getItem("t-1Text"));
