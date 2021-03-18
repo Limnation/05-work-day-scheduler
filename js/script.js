@@ -82,7 +82,7 @@ for (let i = 0; i < hours.length; i++) {
       <span class='input-group-text' id='inputGroup-sizing-default'>${hours[i].stime}</span>
     </div>
     <textarea id='${hours[i].tId}' type='text' class='textarea form-control' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
-    <button id='${hours[i].btn}' class='btns savedIcon' class='btn btn-outline-secondary' type='button'><img src='./images/save.png' alt='save icon'></button>
+    <button id='${hours[i].btn}' class='btns savedIcon' class='btn btn-outline-secondary' type='button'><img src='images/save.png' alt='save icon'></button>
   </div>`
    
     console.log(hours[i])
