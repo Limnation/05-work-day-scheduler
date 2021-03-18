@@ -76,7 +76,6 @@ var hours = [
 
 // for loop that is populating the html with the calendar textarea's with the time being pulled from the array
 for (let i = 0; i < hours.length; i++) {
-
     var newRow = document.createElement("section")
     newRow.innerHTML=`<div class='input-group input-group-lg'>
     <div class='input-group-prepend'>
@@ -85,8 +84,6 @@ for (let i = 0; i < hours.length; i++) {
     <textarea id='${hours[i].tId}' type='text' class='form-control' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
     <button id='${hours[i].btn}' class='btns savedIcon' class='btn btn-outline-secondary' type='button'><img src='images/save.png' alt='save icon'></button>
   </div>`
-   
-    console.log(hours[i])
     containerEl.append(newRow)
 }
 
@@ -94,7 +91,6 @@ for (let i = 0; i < hours.length; i++) {
 for (let i = 0; i < hours.length; i++) {
     let hoursTime = hours[i].time;
     let idCssT = hours[i].idT;
-    console.log($(idCssT))
     //changes backgound color to "red" for current time
     if (militaryTime === hoursTime) {  
         $(idCssT).css("background-color", "#fc4a409c" );
