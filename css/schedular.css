@@ -14,10 +14,6 @@
   background: transparent;
 }
 
-.teaxtarea:focus {
-  outline-style: none !important;
-}
-
 .views {
   font-family: "Open Sans", sans-serif;
   border-top: 10px solid black;
