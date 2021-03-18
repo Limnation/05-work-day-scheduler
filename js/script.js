@@ -94,6 +94,7 @@ for (let i = 0; i < hours.length; i++) {
     //changes backgound color to "red" for current time
     if (militaryTime === hoursTime) {  
         $(idCssT).css("background-color", "#fc4a409c" );
+        // $(idCssT).addclass("present"); if i wanted to used the provided classes
     }
     //changes backgound color to "green" for current time
     if (militaryTime < hoursTime) {
