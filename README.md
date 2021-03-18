@@ -1,5 +1,24 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
+## Myreadme with description
+
+The main objective I am trying to accomplish with this site is to make a Work Day Scheduler. I enjoyed this project in how it let us explore boot strap, jquery, dom traversal, click event, moment events, and reiterate some of the pervious harder topics like local storage. With this homework like before I ended up making two different version of this site one was the first version was with most of the html hard coded into the page and with a lot of repeated code with just different IDs referencing the html. Once I finished that version and had everything working I decided to try and make the code as optimized as I could by using loops, array, neseted functions and DOM manipulation. this homework I feel like it helped me learned and reinforce my knowledge.
+
+## screenshot
+
+Optimized version
+![screenshot1](./Assets/1.JPG)
+![screenshot2](./Assets/2.JPG)
+HTML/long version
+![screenshot3](./Assets/3.JPG)
+![screenshot4](./Assets/4.JPG)
+
+# link to deployed application
+
+[repository](https://github.com/Limnation/05-work-day-scheduler)
+
+[published](https://limnation.github.io/05-work-day-scheduler/)
+
 ## Your Task
 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
