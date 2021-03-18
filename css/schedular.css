@@ -6,38 +6,18 @@
     min-width: 87px !important;
 }
 
-#t-1 {
-    background-color: #ffffff; 
+/* make the save button rounded on the right side */
+.btns {
+    width: 80px !important;
+    border-color: #ebebeb;
+    border-radius: 0px 8px 8px 0px;
+    background: transparent;
 }
 
-#t-2 {
-    background-color: #ffffff; 
+.textarea {
+    background-color: #999999 !important;
 }
 
-#t-3 {
-    background-color: #ffffff; 
-}
-
-#t-4 {
-    background-color: #ffffff; 
-}
-
-#t-5 {
-    background-color: #ffffff; 
-}
-
-#t-6 {
-    background-color: #ffffff; 
-}
-
-#t-7 {
-    background-color: #ffffff; 
-}
-
-#t-8 {
-    background-color: #ffffff; 
-}
-
-#t-9 {
-    background-color: #ffffff; 
+.teaxtarea:focus {
+    outline-style: none !important;
 }
