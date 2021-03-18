@@ -80,55 +80,6 @@ for (let i = 0; i < timer.length; i++) {
     }
 }
 
-
-// function storageItemsFun() {
-//     let storageItems = [];
-//     for (let i = 0; i < timer.length; i++) {
-//         storageItems.push(timer[i].storage);
-//     }
-//     return storageItems;
-// }
-// let storageItemsstuff = JSON.stringify(storageItemsFun());
-// console.log(storageItemsstuff);
-
-// function btnItemsFun() {
-//     let btnItems = [];
-//     for (let i = 0; i < timer.length; i++) {
-//         btnItems.push(timer[i].btnItem);
-//     }
-//     return btnItems;
-// }
-// let btnItemsstuff = JSON.stringify(btnItemsFun());
-// console.log(btnItemsstuff);
-
-
-// function cssItemsFun() {
-//     let cssItems = [];
-//     for (let i = 0; i < timer.length; i++) {
-//         cssItems.push(timer[i].cssItem);
-//         return cssItems[i];
-//     }
-// }
-// let cssItemsstuff = JSON.stringify(cssItemsFun());
-// console.log(cssItemsstuff);
- 
-
-// function renderLocastorage(savedT1) {
-//     var savedT1 = JSON.parse(localStorage.getItem("t-1Text"));
-//     $(cssItemsFun()).val(savedT1);
-// }
-
-// $('#t-1').on("click", function () {
-//     t1 = $(cssItemsstuff).val();
-//     localStorage.setItem("t-1Text", JSON.stringify(t1));
-//     if (t1 === JSON.parse(localStorage.getItem("t-1Text"))) {
-//         $('#t-1').css("color", "black");
-//         $('#t-1').css("font-weight", "bold");
-//     }   
-// });
-
-
-
 for (let i = 0; i < timer.length; i++) {
     timer[i];
     storageItems = timer[i].storage;
