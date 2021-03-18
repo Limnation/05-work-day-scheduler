@@ -5,6 +5,7 @@ var today = moment();
 var date = today.format("dddd, MMM Do");
 var militaryTime = moment().format("H");
 $("#currentDay").text(date);
+var cat = document.getElementById("bob")
 
 // array that hold military time(time) and stardard time(stime) also the The ID and data for the text area (idT) and button (btn)
 var hours = [
@@ -81,7 +82,7 @@ for (let i = 0; i < hours.length; i++) {
     <div class='input-group-prepend'>
       <span class='input-group-text' id='inputGroup-sizing-default'>${hours[i].stime}</span>
     </div>
-    <textarea id='${hours[i].tId}' type='text' class='textarea form-control' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
+    <textarea id='${hours[i].tId}' type='text' class='form-control' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
     <button id='${hours[i].btn}' class='btns savedIcon' class='btn btn-outline-secondary' type='button'><img src='images/save.png' alt='save icon'></button>
   </div>`
    
@@ -91,21 +92,23 @@ for (let i = 0; i < hours.length; i++) {
 
 //changed the text box colors depending on the time
 for (let i = 0; i < hours.length; i++) {
-    hours[i].time;
-    idCssT = hours[i].idT;
+    let hoursTime = hours[i].time;
+    let idCssT = hours[i].idT;
+    console.log($(idCssT))
     //changes backgound color to "red" for current time
-    if (militaryTime === hours[i].time) {  
+    if (militaryTime === hoursTime) {  
         $(idCssT).css("background-color", "#fc4a409c" );
     }
     //changes backgound color to "green" for current time
-    if (militaryTime < hours[i].time) {
+    if (militaryTime < hoursTime) {
         $(idCssT).css("background-color", "#40fc6f9c");
     }
     //changes backgound color to "gray" for current time
-    if (militaryTime > hours[i].time) {
+    if (militaryTime > hoursTime) {
         $(idCssT).css("background-color", "#5050509c");
     }
 }
+
 
 $(document).ready(function () {
     $('.btns').on("click", function () {

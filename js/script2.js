@@ -69,6 +69,7 @@ let timer = [
 for (let i = 0; i < timer.length; i++) {
     timer[i].time;
     cssItems = timer[i].cssItem;
+    console.log($(cssItems));
     if (militaryTime === timer[i].time) {  
         $(cssItems).css("background-color", "red");
     }
