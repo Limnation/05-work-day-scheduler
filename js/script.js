@@ -93,15 +93,15 @@ for (let i = 0; i < hours.length; i++) {
     let idCssT = hours[i].idT;
     //changes backgound color to "red" for current time
     if (militaryTime === hoursTime) {  
-        $(idCssT).addclass("present");
+        $(idCssT).addClass("present");
     }
     //changes backgound color to "green" for future time
     if (militaryTime < hoursTime) {
-        $(idCssT).addclass("future");
+        $(idCssT).addClass("future");
     }
     //changes backgound color to "gray" for past time
     if (militaryTime > hoursTime) {
-        $(idCssT).addclass("past");
+        $(idCssT).addClass("past");
     }
 }
 
