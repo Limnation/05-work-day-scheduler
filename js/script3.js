@@ -14,72 +14,63 @@ var hours = [
         stime: "9AM",
         idT: "#t-1",
         tId: "t-1",
-        btn: "b-1",
-        btnB: "#b-1"
+        btn: "b-1"
     },
     {
         time: "10",
         stime: "10AM",
         idT: "#t-2",
         tId: "t-2",
-        btn: "b-2",
-        btnB: "#b-2"
+        btn: "b-2"
     },
     {
         time: "11",
         stime: "11AM",
         idT: "#t-3",
         tId: "t-3",
-        btn: "b-3",
-        btnB: "#b-3"
+        btn: "b-3"
     },
     {
         time: "12",
         stime: "12AM",
         idT: "#t-4",
         tId: "t-4",
-        btn: "b-4",
-        btnB: "#b-4"
+        btn: "b-4"
     },
     {
         time: "13",
         stime: "1pm",
         idT: "#t-5",
         tId: "t-5",
-        btn: "b-5",
-        btnB: "#b-5"
+        btn: "b-5"
     },
     {
         time: "14",
         stime: "2pm",
         idT: "#t-6",
         tId: "t-6",
-        btn: "b-6",
-        btnB: "#b-6"
+        btn: "b-6"
     },
     {
         time: "15",
         stime: "3pm",
         idT: "#t-7",
         tId: "t-7",
-        btn: "b-7",
-        btnB: "#b-7"
+        btn: "b-7"
     },
     {
         time: "16",
         stime: "4pm",
         idT: "#t-8",
         tId: "t-8",
-        btn: "b-8",
-        btnB: "#b-8"
+        btn: "b-8"
     },
     {
         time: "17",
         stime: "5pm",
         idT: "#t-9",
         tId: "t-9",
-        btn: "b-9",
-        btnB: "#b-9"
+        btn: "b-9"
     }
 ];
 
@@ -90,7 +81,7 @@ for (let i = 0; i < hours.length; i++) {
     <div class='input-group-prepend'>
       <span class='input-group-text' id='inputGroup-sizing-default'>${hours[i].stime}</span>
     </div>
-    <textarea id='${hours[i].tId}' data-hourB='${hours[i].btnB}' data-hourT='${hours[i].idT}' type='text' class='form-control area' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
+    <textarea id='${hours[i].tId}' data-hourB='${hours[i].btn}' data-hourT='${hours[i].idT}' type='text' class='form-control area' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
     <button id='${hours[i].btn}' class='btns savedIcon' class='btn btn-outline-secondary' type='button'><img src='images/save.png' alt='save icon'></button>
   </div>`
     containerEl.append(newRow)
@@ -120,17 +111,15 @@ $(document).ready(function () {
     $('.btns').on("click", function () {
         localStorage.setItem($(this).prop("id"), $(this).prev().val());
     });
-    function localStorage() {
+    function localStorageCall() {
         var timeareas = $('.area').toArray();
-        console.log(timeareas);
         timeareas.forEach(element => {
-            var cat = $(element).attr('data-hourB');
-            var dog = $(element).attr('data-hourT');
-            console.log(cat);
-            console.log(dog);
-            // var savedT = localStorage.getItem(arr[i].b);
-            // $(arr[i].t).val(savedT);
+            var arrb = $(element).attr('data-hourB');
+            var arrt = $(element).attr('data-hourT');
+            var savedT = localStorage.getItem(arrb);
+            console.log(savedT)
+            $(arrt).val(savedT);
         });
     }
-    localStorage()
+    localStorageCall()
 });
