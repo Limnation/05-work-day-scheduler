@@ -105,19 +105,27 @@ for (let i = 0; i < hours.length; i++) {
     }
 }
 
-
+//makes the function available after the document is loaded
 $(document).ready(function () {
+    //targets the button class btn then returns the previous sibling element(textarea)a and its ID then returns the value of the textrea's id with .val()
     $('.btns').on("click", function () {
         localStorage.setItem($(this).prop("id"), $(this).prev().val());
     });
+    //gets all the stored data from local storage
     function localStorageCall() {
+        //makes an array of textarea tag
         var timeareas = $('.area').toArray();
+        //List each "textarea tag" in the array 
         timeareas.forEach(element => {
+            //grabs the data-* unique values from all textareas
             var arrb = $(element).attr('data-hourB');
             var arrt = $(element).attr('data-hourT');
+            //uses the unique values names are the keys and gets the value and saves it as savedT
             var savedT = localStorage.getItem(arrb);
+            //assigns the saved data in the textarea
             $(arrt).val(savedT);
         });
     }
+    //invoked local sotrage funtion
     localStorageCall()
 });
