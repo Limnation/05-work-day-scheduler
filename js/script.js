@@ -11,28 +11,28 @@ var cat = document.getElementById("bob")
 var hours = [
     {
         time: "09",
-        stime: "9AM",
+        stime: "9am",
         idT: "#t-1",
         tId: "t-1",
         btn: "b-1"
     },
     {
         time: "10",
-        stime: "10AM",
+        stime: "10am",
         idT: "#t-2",
         tId: "t-2",
         btn: "b-2"
     },
     {
         time: "11",
-        stime: "11AM",
+        stime: "11am",
         idT: "#t-3",
         tId: "t-3",
         btn: "b-3"
     },
     {
         time: "12",
-        stime: "12AM",
+        stime: "12am",
         idT: "#t-4",
         tId: "t-4",
         btn: "b-4"
