@@ -1,3 +1,4 @@
+
 const containerEl = $('.container');
 
 //adds the moment timer to the top of the page in the format of day, month date
@@ -81,7 +82,7 @@ for (let i = 0; i < hours.length; i++) {
     <div class='input-group-prepend'>
       <span class='input-group-text' id='inputGroup-sizing-default'>${hours[i].stime}</span>
     </div>
-    <textarea id='${hours[i].tId}' data-hourB='${hours[i].btn}' data-hourT='${hours[i].idT}' type='text' class='form-control area' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
+    <textarea id='${hours[i].tId}' type='text' class='form-control' placeholder='Activities' aria-label='Recipient's username' aria-describedby='basic-addon2'></textarea>
     <button id='${hours[i].btn}' class='btns savedIcon' class='btn btn-outline-secondary' type='button'><img src='images/save.png' alt='save icon'></button>
   </div>`
     containerEl.append(newRow)
@@ -96,11 +97,11 @@ for (let i = 0; i < hours.length; i++) {
         $(idCssT).css("background-color", "#fc4a409c" );
         // $(idCssT).addclass("present"); if i wanted to used the provided classes
     }
-    //changes backgound color to "green" for current time
+    //changes backgound color to "green" for future time
     if (militaryTime < hoursTime) {
         $(idCssT).css("background-color", "#40fc6f9c");
     }
-    //changes backgound color to "gray" for current time
+    //changes backgound color to "gray" for past time
     if (militaryTime > hoursTime) {
         $(idCssT).css("background-color", "#5050509c");
     }
@@ -111,15 +112,9 @@ $(document).ready(function () {
     $('.btns').on("click", function () {
         localStorage.setItem($(this).prop("id"), $(this).prev().val());
     });
-    function localStorageCall() {
-        var timeareas = $('.area').toArray();
-        timeareas.forEach(element => {
-            var arrb = $(element).attr('data-hourB');
-            var arrt = $(element).attr('data-hourT');
-            var savedT = localStorage.getItem(arrb);
-            console.log(savedT)
-            $(arrt).val(savedT);
-        });
+    arr = [{b:'b-1',t:'#t-1'},{b:'b-2',t:'#t-2'},{b:'b-3',t:'#t-3'},{b:'b-4',t:'#t-4'},{b:'b-5',t:'#t-5'},{b:'b-6',t:'#t-6'},{b:'b-7',t:'#t-7'},{b:'b-8',t:'#t-8'},{b:'b-9',t:'#t-9'}]
+    for (let i = 0; i < arr.length; i++) {
+        var savedT = localStorage.getItem(arr[i].b);
+        $(arr[i].t).val(savedT);
     }
-    localStorageCall()
 });
