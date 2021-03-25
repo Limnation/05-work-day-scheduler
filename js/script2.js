@@ -7,9 +7,10 @@ let cssItems;
 let btnItems;
 
 var militaryTime = moment().format("H");
+var militaryTime = parseInt(militaryTime);
 let timer = [
     {
-        time: "09",
+        time: "9",
         cssItem: "#t-1",
         btnItem: "#b-1",
         storage: "#t-1Text"
@@ -69,14 +70,18 @@ let timer = [
 for (let i = 0; i < timer.length; i++) {
     timer[i].time;
     cssItems = timer[i].cssItem;
-    console.log($(cssItems));
-    if (militaryTime === timer[i].time) {  
+    let hoursTime = timer[i].time;
+    hoursTime = parseInt(hoursTime);
+    console.log(militaryTime);
+    console.log(hoursTime)
+    console.log(militaryTime === hoursTime);
+    if (militaryTime === hoursTime) {  
         $(cssItems).css("background-color", "red");
     }
-    if (militaryTime < timer[i].time) {
+    if (militaryTime < hoursTime) {
         $(cssItems).css("background-color", "green");
     }
-    if (militaryTime > timer[i].time) {
+    if (militaryTime > hoursTime) {
         $(cssItems).css("background-color", "gray");
     }
 }

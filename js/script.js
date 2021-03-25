@@ -4,13 +4,14 @@ const containerEl = $('.container');
 var today = moment();
 var date = today.format("dddd, MMM Do");
 var militaryTime = moment().format("H");
+var militaryTime = parseInt(militaryTime);
 $("#currentDay").text(date);
 var cat = document.getElementById("bob")
 
 // array that hold military time(time) and stardard time(stime) also the The ID and data for the text area (idT) and button (btn)
 var hours = [
     {
-        time: "09",
+        time: "9",
         stime: "9am",
         idT: "#t-1",
         tId: "t-1",
@@ -90,6 +91,7 @@ for (let i = 0; i < hours.length; i++) {
 //changed the text box colors depending on the time
 for (let i = 0; i < hours.length; i++) {
     let hoursTime = hours[i].time;
+    hoursTime = parseInt(hoursTime);
     let idCssT = hours[i].idT;
     //changes backgound color to "red" for current time
     if (militaryTime === hoursTime) {  
